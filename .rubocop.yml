@@ -12,6 +12,7 @@ AllCops:
     - "log/**/*"
     - "public/**/*"
     - "vendor/**/*"
+    - "db/migrate/*"
 
 Style/Documentation:
   Enabled: false
