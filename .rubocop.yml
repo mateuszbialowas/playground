@@ -12,3 +12,6 @@ AllCops:
     - "log/**/*"
     - "public/**/*"
     - "vendor/**/*"
+
+Style/Documentation:
+  Enabled: false
