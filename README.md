@@ -1,5 +1,9 @@
 # README
 
+## Generate view components
+```
+bin/rails generate component Example title --preview
+```
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
