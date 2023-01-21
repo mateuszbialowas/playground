@@ -1,4 +1,24 @@
-<div data-controller="hello"></div>
-asdf2asdfasdfasdasdasdfsadf
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="mt-48 flex flex-wrap gap-8 justify-between">
+
+  <% Benchmark.ips do |x| %>
+    <% x.report("view component with each method") do %>
+      <% employees.each do |employee| %>
+        <%= render(Employees::CardIdComponent.new(employee: employee)) %>
+      <% end %>
+    <% end %>
+    <% x.report("view component with collection") do %>
+      <%= render(Employees::CardIdComponent.with_collection(employees)) %>
+    <% end %>
+    <% x.report("shared views with each method") do %>
+      <% employees.each do |employee| %>
+        <%= render(partial: 'employees/card_id', locals: { employee: }) %>
+      <% end %>
+    <% end %>
+    <% x.report("shared views with collection") do %>
+      <%= render(partial: 'employees/card_id', collection: employees, as: :employee) %>
+    <% end %>
+    <% x.compare! %>
+  <% end %>
+
+</div>
+
