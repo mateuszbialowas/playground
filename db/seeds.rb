@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-if Employee.count < 10
+if Employee.count < 100
   Employee.transaction do
-    10.times do
+    100.times do
       Employee.create!(
         full_name: FFaker::Name.name,
         department: Employee.statuses.keys.sample,
