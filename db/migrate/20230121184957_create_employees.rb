@@ -10,6 +10,7 @@ class CreateEmployees < ActiveRecord::Migration[7.0]
       t.string :phone
       t.date :birthday
       t.string :location
+      t.text :image_data
 
       t.timestamps
     end
