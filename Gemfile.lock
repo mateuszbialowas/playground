@@ -348,6 +348,7 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
+  down
   factory_bot_rails
   ffaker
   hotwire-livereload

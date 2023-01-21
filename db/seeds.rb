@@ -11,7 +11,7 @@ if Employee.count < 10
         phone: FFaker::PhoneNumber.phone_number,
         birthday: FFaker::Time.date,
         location: FFaker::Address.country,
-        avatar: Rails.root.join('spec/fixtures/lena.png').open
+        avatar: Down.download(FFaker::Avatar.image)
       )
     end
   end

@@ -40,6 +40,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'down'
   gem 'hotwire-livereload'
   gem 'memory_profiler'
   gem 'rack-mini-profiler'
