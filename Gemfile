@@ -54,3 +54,4 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+gem 'benchmark-ips', group: %i[development test]
