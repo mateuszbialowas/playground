@@ -39,11 +39,11 @@ end
 
 group :development, :test, :production do
   gem 'benchmark-ips'
+  gem 'down'
   gem 'ffaker'
 end
 
 group :development do
-  gem 'down'
   gem 'hotwire-livereload'
   gem 'lookbook'
   gem 'memory_profiler'
