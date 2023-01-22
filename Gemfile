@@ -25,6 +25,7 @@ gem 'image_processing', '~> 1.2'
 gem 'lookbook'
 gem 'shrine'
 gem 'view_component'
+gem 'benchmark-ips'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -54,4 +55,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-gem 'benchmark-ips', group: %i[development test]

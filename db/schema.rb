@@ -24,7 +24,6 @@ ActiveRecord::Schema[7.0].define(version: 20_230_121_184_957) do
     t.string 'phone'
     t.date 'birthday'
     t.string 'location'
-    t.text 'avatar_data'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
