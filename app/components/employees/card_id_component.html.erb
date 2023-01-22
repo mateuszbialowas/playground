@@ -1,14 +1,30 @@
-<div class="w-72 shadow-xl rounded-lg">
-  <div class="bg-[url('pattern.svg')] p-4 rounded-t-lg">
-    <%= image_tag employee.avatar_url, class: 'rounded-full w-40 mx-auto border border-8 border-white' %>
+<div class="group w-72 rounded-lg flip"
+     data-controller="employees--card-id"
+     data-action="click->employees--card-id#flipCardId">
+
+  <div class="h-80 transform-preserve-3d transition-transform duration-500 shadow-xl"
+       data-employees--card-id-target="flipContent">
+
+    <div class="absolute w-72 backface-hidden">
+      <div class="bg-[url('pattern.svg')] p-4 rounded-t-lg">
+        <%= image_tag employee.avatar_url, class: 'rounded-full w-40 mx-auto border border-8 border-white' %>
+      </div>
+      <%= content_tag :div, class: 'py-8 px-6' do %>
+        <%= content_tag :div, employee.full_name, class: 'text-xl font-bold text-center' %>
+        <%= content_tag :div, employee.position, class: 'text-xl text-center text-gray-500 mb-2' %>
+      <% end %>
+    </div>
+
+
+    <div class="absolute w-72 rotate-y-180 backface-hidden">
+      <%= content_tag :div, class: 'py-8 px-6' do %>
+        <%= content_tag :div, "Department: #{employee.department}", class: 'text-sm text-gray-500' %>
+        <%= content_tag :div, "Email: #{employee.email}", class: 'text-sm text-gray-500' %>
+        <%= content_tag :div, "Phone: #{employee.phone}", class: 'text-sm text-gray-500' %>
+        <%= content_tag :div, "Birthday: #{employee.birthday}", class: 'text-sm text-gray-500' %>
+        <%= content_tag :div, "Location: #{employee.location}", class: 'text-sm text-gray-500' %>
+      <% end %>
+    </div>
   </div>
-  <%= content_tag :div, class: 'py-8 px-6' do %>
-    <%= content_tag :div, employee.full_name, class: 'text-xl font-bold text-center' %>
-    <%= content_tag :div, employee.position, class: 'text-xl text-center text-gray-500 mb-2' %>
-    <%= content_tag :div, "Department: #{employee.department}", class: 'text-sm text-gray-500' %>
-    <%= content_tag :div, "Email: #{employee.email}", class: 'text-sm text-gray-500' %>
-    <%= content_tag :div, "Phone: #{employee.phone}", class: 'text-sm text-gray-500' %>
-    <%= content_tag :div, "Birthday: #{employee.birthday}", class: 'text-sm text-gray-500' %>
-    <%= content_tag :div, "Location: #{employee.location}", class: 'text-sm text-gray-500' %>
-  <% end %>
+
 </div>

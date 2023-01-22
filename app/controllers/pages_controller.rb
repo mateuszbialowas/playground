@@ -2,6 +2,6 @@
 
 class PagesController < ApplicationController
   def home
-    render 'pages/home', locals: { employees: Employee.all }
+    render 'pages/home', locals: { employees: Employee.first(10) }
   end
 end
