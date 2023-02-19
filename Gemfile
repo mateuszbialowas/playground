@@ -10,7 +10,7 @@ gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
-gem 'rails', '~> 7.0.4', '>= 7.0.4.1'
+gem 'rails'
 gem 'redis', '~> 4.0'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
@@ -22,9 +22,9 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Use Sass to process CSS
 # gem "sassc-rails"
 gem 'image_processing', '~> 1.2'
+gem 'inline_svg'
 gem 'shrine'
 gem 'view_component'
-gem 'inline_svg'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

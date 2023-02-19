@@ -5,11 +5,11 @@ require 'rails_helper'
 RSpec.describe Employees::CardIdComponent, type: :component do
   pending "add some examples to (or delete) #{__FILE__}"
 
-  xit "renders something useful" do
+  xit 'renders something useful' do
     expect(
-      render_inline(described_class.new(attr: "value")) { "Hello, components!" }.css("p").to_html
+      render_inline(described_class.new(attr: 'value')) { 'Hello, components!' }.css('p').to_html
     ).to include(
-      "Hello, components!"
+      'Hello, components!'
     )
   end
 end
