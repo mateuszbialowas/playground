@@ -4,11 +4,6 @@ module Shared
   module Inputs
     class TextFieldComponent < ViewComponent::Base
       include InlineSvg::ActionView::Helpers
-      # def initialize(leading_icon: nil, trailing_icon: nil, **options)
-      #   @leading_icon = leading_icon
-      #   @trailing_icon = trailing_icon
-      #   @options = options
-      # end
 
       def initialize(leading_icon: nil, label: true, validation: nil, hint_text: nil)
         @leading_icon = leading_icon
