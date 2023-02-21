@@ -12,5 +12,5 @@ bin/rails generate component Example title --preview
 
 ### Generate benchmark
 ```
-rails g benchmark transactins example1 example2
+rails g benchmark transactions example1 example2
 ```
