@@ -14,3 +14,8 @@ bin/rails generate component Example title --preview
 ```
 rails g benchmark transactions example1 example2
 ```
+
+### Generate sidekiq job
+```
+rails generate sidekiq:job example
+```
