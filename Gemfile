@@ -24,8 +24,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'image_processing', '~> 1.2'
 gem 'inline_svg'
 gem 'shrine'
-gem 'view_component'
 gem 'sidekiq'
+gem 'view_component'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -56,6 +56,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'rspec-sidekiq'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
