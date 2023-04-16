@@ -40,6 +40,21 @@ RSpec.configure do |config|
     Sidekiq::Worker.clear_all
   end
 
+  # config.before(:each, :disable_sidekiq_testing) do
+  #   Sidekiq::Testing.disable!
+  # end
+  #
+  # config.after(:each, :disable_sidekiq_testing) do
+  #   Sidekiq::Testing.fake!
+  # end
+
+  config.around(:each, :disable_sidekiq_testing) do |example|
+    Sidekiq::Testing.disable! do
+      example.run
+    end
+  end
+
+
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
