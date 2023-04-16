@@ -7,6 +7,7 @@ require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
+require 'sidekiq/testing'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -34,6 +35,25 @@ end
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.fixture_path = Rails.root.join('spec/fixtures')
+
+  config.before(:each) do
+    Sidekiq::Worker.clear_all
+  end
+
+  # config.before(:each, :disable_sidekiq_testing) do
+  #   Sidekiq::Testing.disable!
+  # end
+  #
+  # config.after(:each, :disable_sidekiq_testing) do
+  #   Sidekiq::Testing.fake!
+  # end
+
+  config.around(:each, :disable_sidekiq_testing) do |example|
+    Sidekiq::Testing.disable! do
+      example.run
+    end
+  end
+
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
