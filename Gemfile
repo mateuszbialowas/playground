@@ -36,6 +36,7 @@ group :development, :test do
   gem 'rubocop-rails'
   gem 'rubocop-rails_config'
   gem 'rubocop-rspec'
+  gem 'pry'
 end
 
 group :development, :test, :production do
