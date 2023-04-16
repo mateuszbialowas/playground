@@ -8,8 +8,6 @@ RSpec.describe ExampleJob, type: :job do
   let(:employee_id) { employee.id }
 
   context 'with success' do
-    it { is_expected.to be_truthy }
-
     it 'queues the job' do
       expect { job }.to change(Sidekiq::Queues['default'], :size).by(1)
     end

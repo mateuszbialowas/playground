@@ -4,6 +4,7 @@ require 'rails_helper'
 
 describe Example, type: :service do
   subject(:service) { described_class.new(employee_id_param).call }
+
   let(:employee) { create(:employee) }
   let(:employee_id_param) { employee.id }
 
